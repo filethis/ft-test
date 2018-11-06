@@ -1,0 +1,7 @@
+{
+  "name": "ft-test",
+  "short_name": "ft-test",
+  "description": "A testbed app for whatever",
+  "start_url": "/",
+  "display": "standalone"
+}

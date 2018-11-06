@@ -1,0 +1,14 @@
+# Project configuration
+NAME=ft-test
+SRC_DIR=src/
+VERSION=1.0.1
+LOCAL_PORT=3537
+GITHUB_USER=filethis
+GITHUB_USER_ABBREV=
+BOWER_NAMESPACE=FileThis
+QUERY_STRING=
+#CDN_DISTRIBUTION_ID=XXXX
+#PUBLICATION_DOMAIN=xxx.yyy.com
+#AWS_VAULT_PROFILE=xxxx
+
+include project-application.make
