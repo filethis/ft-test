@@ -6,9 +6,20 @@
         "polymer": "Polymer/polymer#1.9 - 2"
     },
     "devDependencies": {
+        "ft-connection-list-item": "filethis/ft-connection-list-item#^1.0.30",
+        "ft-connection-panel": "filethis/ft-connection-panel#^1.0.27",
+        "ft-document-panel": "filethis/ft-document-panel#^1.0.30",
+        "ft-source-panel": "filethis/ft-source-panel#^1.0.29",
+        "ft-source-grid": "filethis/ft-source-grid#^1.0.24",
+        "ft-source-grid-item": "filethis/ft-source-grid-item#^1.0.23",
+        "ft-connect-wizard": "filethis/ft-connect-wizard#^2.0.4",
         "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
         "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
         "iron-test-helpers": "PolymerElements/iron-test-helpers#1 - 2",
+        "iron-label": "PolymerElements/iron-label#1 - 2",
+        "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#1 - 2",
+        "paper-item": "PolymerElements/paper-item#1 - 2",
+        "paper-listbox": "PolymerElements/paper-listbox#1 - 2",
         "web-component-tester": "Polymer/web-component-tester#^6.0.0",
         "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
     },

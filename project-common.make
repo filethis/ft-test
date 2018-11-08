@@ -98,14 +98,22 @@ dist-clean:  ## Clean distribution
 dist-build:  ## Build distribution
 	@mkdir ./build/; \
 	mkdir ./dist/; \
+	echo Dependencies...; \
+	rsync -rP \
+	    --exclude=bower_components \
+	    --exclude=build \
+	    --exclude=dist \
+	    --exclude=test \
+	    ./ ./build; \
+	[ -z "${SRC_DIR}" ] && rsync -rP --copy-links ../bower_components ./build; \
+    pushd ./build > /dev/null; \
 	echo Vulcanizing...; \
 	polymer-bundler \
 	    ${SRC_DIR}${NAME}.html \
 	    --rewrite-urls-in-templates \
 	    --inline-scripts \
 	    --inline-css \
-	    --out-file ./build/${NAME}.vulcanized.html; \
-    pushd ./build > /dev/null; \
+	    --out-file ${NAME}.vulcanized.html; \
 	echo Splitting...; \
 	crisper \
 	    --source ${NAME}.vulcanized.html \
@@ -114,7 +122,6 @@ dist-build:  ## Build distribution
 	echo Transpiling...; \
 	babel \
 	    ${NAME}.js \
-	    --presets /usr/local/lib/node_modules/babel-preset-es2015 \
 	    --out-file ${NAME}.es5.js; \
 	echo Minifying...; \
 	cp \
