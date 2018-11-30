@@ -35,19 +35,18 @@ limitations under the License.
     <script src="https://unpkg.com/polymer-build@2.1.1/lib/babel-helpers.min.js"></script>
     <script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/webcomponents-loader.js"></script>
 
+    <!-- Imports -->
+    <link rel="import" href="https://connect.filethis.com/ft-connect-wizard/2.0.8/ft-connect-wizard.html">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
 </head>
 
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-    }
-</style>
-
 <body>
-
-<!-- Imports -->
-<link rel="import" href="https://connect.filethis.com/ft-connect-wizard/2.0.8/ft-connect-wizard.html">
 
 <!-- Define a template that lets us configure the ft-connect-wizard -->
 <dom-module id="ft-connect-wizard-configured">
@@ -105,15 +104,32 @@ limitations under the License.
     </script>
 </dom-module>
 
+<div>This is the top of the body</div>
+
 <!-- Wizard instance -->
-<ft-connect-wizard-configured
-    id="wizard"
-    style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "
-    user-account-id="200695"
-    token="lOzsntIA7STeGeAPEH0PGqy_LbX0_w079bLc1TUk65DH"
-    live="true"
-    debug="true"
-    fake-sources="true">
-</ft-connect-wizard-configured>
+<!--<ft-connect-wizard-configured-->
+    <!--id="wizard"-->
+    <!--style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "-->
+    <!--user-account-id="200695"-->
+    <!--token="lOzsntIA7STeGeAPEH0PGqy_LbX0_w079bLc1TUk65DH"-->
+    <!--live="true"-->
+    <!--debug="true"-->
+    <!--fake-sources="true">-->
+<!--</ft-connect-wizard-configured>-->
+
+<script>
+    window.addEventListener('WebComponentsReady', function() {
+        var wizard = document.createElement("ft-connect-wizard-configured");
+        wizard.id = "wizard";
+        wizard.style = "width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; ";
+        wizard.userAccountId = "200695";
+        wizard.token = "lOzsntIA7STeGeAPEH0PGqy_LbX0_w079bLc1TUk65DH";
+        wizard.live = "true";
+        wizard.debug = "true";
+        wizard.fakeSources = "true";
+        document.body.appendChild(wizard);
+    });
+</script>
+
 </body>
 </html>
