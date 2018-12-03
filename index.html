@@ -48,88 +48,32 @@ limitations under the License.
 
 <body>
 
-<!-- Define a template that lets us configure the ft-connect-wizard -->
-<dom-module id="ft-connect-wizard-configured">
-    <template>
-        <style>
-            /* Styling for this component itself */
-            :host {
-                display: block;
-            }
-
-            /* Style configuration for sub-components */
-            :root {
-                /* None*/
-            }
-        </style>
-
-        <!-- Wizard template -->
-        <ft-connect-wizard
-            style="width: 100%; height: 100%; "
-            live="{{live}}"
-            user-account-id="{{userAccountId}}"
-            token="{{token}}"
-            debug="{{debug}}"
-            fake-sources="{{fakeSources}}">
-        </ft-connect-wizard>
-    </template>
-
-    <script>
-        Polymer({
-            is: 'ft-connect-wizard-configured',
-            properties: {
-                live: { type: Object, notify: true, value: false },
-                userAccountId: { type: String, notify: true },
-                token: { type: String, notify: true },
-                debug: { type: Object, notify: true, value: false },
-                fakeSources: { type: Object, notify: true, value: true },
-            },
-            ready: function() {
-                var wizard = document.getElementById("wizard");
-                wizard.addEventListener('ft-connect-error', this.onWizardError);
-                wizard.addEventListener('wizard-canceled-command', this.onWizardCanceledCommand);
-                wizard.addEventListener('wizard-done-command', this.onWizardDoneCommand);
-            },
-            onWizardError: function(event) { alert(this.getErrorMessage(event)); },
-            onWizardCanceledCommand: function(event) { alert("Wizard canceled"); },
-            onWizardDoneCommand: function(event) { alert("Wizard done"); },
-            getErrorMessage: function(event) {
-                if (!event.detail) return "Wizard error";
-                if (event.detail.message) return event.detail.message;
-                if (!event.detail.response) return "Wizard error";
-                if (event.detail.response.message) return event.detail.response.message;
-                return "Wizard error";
-            }
-        })
-    </script>
-</dom-module>
-
-<div>This is the top of the body</div>
+<link rel="import" href="src/ft-test.html">
 
 <!-- Wizard instance -->
-<!--<ft-connect-wizard-configured-->
-    <!--id="wizard"-->
-    <!--style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "-->
-    <!--user-account-id="200695"-->
-    <!--token="lOzsntIA7STeGeAPEH0PGqy_LbX0_w079bLc1TUk65DH"-->
-    <!--live="true"-->
-    <!--debug="true"-->
-    <!--fake-sources="true">-->
-<!--</ft-connect-wizard-configured>-->
+<ft-connect-wizard-configured
+    id="wizard"
+    style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "
+    user-account-id="200695"
+    token="WRIa5ZbCrZEnTx2Sz76wc9zK8UnA1Dt18s8PINrVXJUL"
+    live="true"
+    debug="true"
+    fake-sources="true">
+</ft-connect-wizard-configured>
 
-<script>
-    window.addEventListener('WebComponentsReady', function() {
-        var wizard = document.createElement("ft-connect-wizard-configured");
-        wizard.id = "wizard";
-        wizard.style = "width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; ";
-        wizard.userAccountId = "200695";
-        wizard.token = "lOzsntIA7STeGeAPEH0PGqy_LbX0_w079bLc1TUk65DH";
-        wizard.live = "true";
-        wizard.debug = "true";
-        wizard.fakeSources = "true";
-        document.body.appendChild(wizard);
-    });
-</script>
+<!--<script>-->
+<!--window.addEventListener('WebComponentsReady', function() {-->
+<!--var wizard = document.createElement("ft-connect-wizard-configured");-->
+<!--wizard.id = "wizard";-->
+<!--wizard.style = "width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; ";-->
+<!--wizard.userAccountId = "200695";-->
+<!--wizard.token = "WRIa5ZbCrZEnTx2Sz76wc9zK8UnA1Dt18s8PINrVXJUL";-->
+<!--wizard.live = "true";-->
+<!--wizard.debug = "true";-->
+<!--wizard.fakeSources = "true";-->
+<!--document.body.appendChild(wizard);-->
+<!--});-->
+<!--</script>-->
 
 </body>
 </html>
