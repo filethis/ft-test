@@ -128,7 +128,6 @@ dist-build:  ## Build distribution
 	echo Splitting...; \
 	crisper \
 	    --source ${NAME}.vulcanized.html \
-	    --script-in-head=false \
 	    --html ${NAME}.split.html \
 	    --js ${NAME}.js; \
 	echo Transpiling...; \
