@@ -1,11 +1,10 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/ft-test.html",
+  "shell": "index.html",
   "fragments": [
   ],
   "sources": [
-    "src/**/*",
-    "robots.txt"
+    "index.html"
   ],
   "extraDependencies": [
     "manifest.json"
@@ -23,16 +22,16 @@
       "name": "app",
       "bundle": true,
       "js": {
-        "minify": true,
+        "minify": false,
         "compile": true
       },
       "css": {
-        "minify": true
+        "minify": false
       },
       "html": {
-        "minify": true
+        "minify": false
       },
-      "stripComments": "true",
+      "stripComments": false,
       "addPushManifest": true,
       "insertPrefetchLinks": true
     }

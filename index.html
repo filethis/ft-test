@@ -1,42 +1,19 @@
-<!--
-Copyright 2018 FileThis, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-
-
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>ft-test</title>
-    <meta name="description" content="ft-test description">
-
     <!-- Load any needed Web Components polyfills from the FileThis CDN -->
-    <!--<script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/custom-elements-es5-adapter.js"></script>-->
-    <script type="text/javascript">
-        if (window.customElements) {
-            document.write('<scr' + 'ipt type="text/javascript" src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/custom-elements-es5-adapter.js"></scr' + 'ipt>');
-        }
-    </script>
+    <script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/custom-elements-es5-adapter.js"></script>
     <script src="https://unpkg.com/polymer-build@2.1.1/lib/babel-helpers.min.js"></script>
     <script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/webcomponents-loader.js"></script>
 
     <!-- Imports -->
     <link rel="import" href="https://connect.filethis.com/ft-connect-wizard/2.0.8/ft-connect-wizard.html">
+    <link rel="import" href="ft-connect-wizard-configured.html">
+
 
     <style>
         html, body {
@@ -48,32 +25,18 @@ limitations under the License.
 
 <body>
 
-<link rel="import" href="src/ft-test.html">
-
 <!-- Wizard instance -->
 <ft-connect-wizard-configured
     id="wizard"
     style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "
-    user-account-id="200695"
-    token="WRIa5ZbCrZEnTx2Sz76wc9zK8UnA1Dt18s8PINrVXJUL"
+    user-account-id="200442"
+    token="aOyurTBq0RgHACH3qA5urSSyJBwGE89vEXfk9fRJeYvd"
     live="true"
     debug="true"
     fake-sources="true">
 </ft-connect-wizard-configured>
-
-<!--<script>-->
-<!--window.addEventListener('WebComponentsReady', function() {-->
-<!--var wizard = document.createElement("ft-connect-wizard-configured");-->
-<!--wizard.id = "wizard";-->
-<!--wizard.style = "width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; ";-->
-<!--wizard.userAccountId = "200695";-->
-<!--wizard.token = "WRIa5ZbCrZEnTx2Sz76wc9zK8UnA1Dt18s8PINrVXJUL";-->
-<!--wizard.live = "true";-->
-<!--wizard.debug = "true";-->
-<!--wizard.fakeSources = "true";-->
-<!--document.body.appendChild(wizard);-->
-<!--});-->
-<!--</script>-->
-
 </body>
 </html>
+
+
+
