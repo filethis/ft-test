@@ -12,8 +12,6 @@
 
     <!-- Imports -->
     <link rel="import" href="https://connect.filethis.com/ft-connect-wizard/2.0.8/ft-connect-wizard.html">
-    <link rel="import" href="ft-connect-wizard-configured.html">
-
 
     <style>
         html, body {
@@ -25,16 +23,26 @@
 
 <body>
 
-<!-- Wizard instance -->
-<ft-connect-wizard-configured
-    id="wizard"
-    style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "
-    user-account-id="200442"
-    token="aOyurTBq0RgHACH3qA5urSSyJBwGE89vEXfk9fRJeYvd"
-    live="true"
-    debug="true"
-    fake-sources="true">
-</ft-connect-wizard-configured>
+    <ft-test
+        id="wizard"
+        style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "
+        user-account-id="200695"
+        token="4XswPyG3OOGIXL_jkPeku5hi0JkoqCqhZXddkjNGjDF5"
+        live="true"
+        debug="true"
+        fake-sources="true">
+    </ft-test>
+
+    <script>
+        window.addEventListener('WebComponentsReady', function () {
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'import');
+            link.setAttribute('href', './src/ft-test.html');
+            document.getElementsByTagName('head')[0].appendChild(link);
+        });
+    </script>
+
+
 </body>
 </html>
 

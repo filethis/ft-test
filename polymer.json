@@ -1,10 +1,11 @@
 {
   "entrypoint": "index.html",
-  "shell": "index.html",
+  "shell": "src/ft-test.html",
   "fragments": [
   ],
   "sources": [
-    "index.html"
+    "src/**/*",
+    "robots.txt"
   ],
   "extraDependencies": [
     "manifest.json"
@@ -19,21 +20,26 @@
   },
   "builds": [
     {
-      "name": "app",
-      "bundle": true,
-      "js": {
-        "minify": false,
-        "compile": true
-      },
-      "css": {
-        "minify": false
-      },
-      "html": {
-        "minify": false
-      },
-      "stripComments": false,
-      "addPushManifest": true,
-      "insertPrefetchLinks": true
+      "name": "dev",
+      "bundle": false,
+      "js": {"minify": false, "compile": false},
+      "css": {"minify": false},
+      "html": {"minify": false},
+      "addServiceWorker": false,
+      "addPushManifest": false
+    },
+    {
+      "name": "prod",
+      "preset": "es5-bundled"
+    },
+    {
+      "name": "debug",
+      "preset": "es5-bundled",
+      "bundle": false,
+      "js": { "minify": false},
+      "css": {"minify": false},
+      "html": { "minify": false},
+      "addServiceWorker": false
     }
   ]
 }
