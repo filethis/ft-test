@@ -1,3 +1,5 @@
+<link rel="import" href="../bower_components/iron-label/iron-label.html">
+<link rel="import" href="../bower_components/ft-document-panel/ft-document-panel.html">
 
 <!-- Define a template that lets us configure the ft-connect-wizard -->
 <dom-module id="ft-test">
@@ -14,47 +16,45 @@
             }
         </style>
 
-        <!-- Settings configuration for sub-components -->
-        <ft-source-panel-settings
-            ft-source-panel-heading="Please choose a xxxxx">
-        </ft-source-panel-settings>
+        <iron-label>
+            iron-label
+        </iron-label>
 
-        <!-- Wizard template -->
-        <ft-connect-wizard
-            style="width: 100%; height: 100%; "
-            live="{{live}}"
-            user-account-id="{{userAccountId}}"
-            token="{{token}}"
-            debug="{{debug}}"
-            fake-sources="{{fakeSources}}">
-        </ft-connect-wizard>
+        <ft-document-panel id="panel">
+
+        </ft-document-panel>
     </template>
 
     <script>
         Polymer({
             is: 'ft-test',
             properties: {
-                live: { type: Object, notify: true, value: false },
-                userAccountId: { type: String, notify: true },
-                token: { type: String, notify: true },
-                debug: { type: Object, notify: true, value: false },
-                fakeSources: { type: Object, notify: true, value: true },
             },
-            ready: function() {
-                var wizard = document.getElementById("wizard");
-                wizard.addEventListener('ft-connect-error', this.onWizardError);
-                wizard.addEventListener('wizard-canceled-command', this.onWizardCanceledCommand);
-                wizard.addEventListener('wizard-done-command', this.onWizardDoneCommand);
+            ready: function()
+            {
+                this._loadFakeDocuments();
             },
-            onWizardError: function(event) { alert(this.getErrorMessage(event)); },
-            onWizardCanceledCommand: function(event) { alert("Wizard canceled"); },
-            onWizardDoneCommand: function(event) { alert("Wizard done"); },
-            getErrorMessage: function(event) {
-                if (!event.detail) return "Wizard error";
-                if (event.detail.message) return event.detail.message;
-                if (!event.detail.response) return "Wizard error";
-                if (event.detail.response.message) return event.detail.response.message;
-                return "Wizard error";
+
+            _loadFakeDocuments: function()
+            {
+                // var documents = "[\n" +
+                //     "    {\n" +
+                //     "        \"accountId\": \"1\",\n" +
+                //     "        \"connectionId\": \"4567\",\n" +
+                //     "        \"actionDate\": \"2012-03-15T01:05:34+00:00\",\n" +
+                //     "        \"addedDate\": \"2017-03-20T01:05:14+00:00\",\n" +
+                //     "        \"createdDate\": \"2012-03-15T01:05:14+00:00\",\n" +
+                //     "        \"deliveredDate\": \"2012-03-15T01:05:14+00:00\",\n" +
+                //     "        \"relevantDate\": \"2012-12-18T01:05:14+00:00\",\n" +
+                //     "        \"deliveryState\": \"done\",\n" +
+                //     "        \"id\": \"1\",\n" +
+                //     "        \"name\": \"Amazon Orders 2012-12-18 4.pdf\",\n" +
+                //     "        \"pageCount\": \"32\",\n" +
+                //     "        \"size\": \"590487\"\n" +
+                //     "        \"thumbnailUrl\": \"https://www.gettyimages.com/license/898736012\"\n" +
+                //     "    }\n" +
+                //     "]";
+                // this.$.panel.documents = JSON.parse(documents);
             }
         })
     </script>

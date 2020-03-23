@@ -275,6 +275,10 @@ modularize:  # Convert from from Polymer version 2 to version 3
 # Shortcuts
 #------------------------------------------------------------------------------
 
+.PHONY: lint
+lint: source-lint-polymerlint  ## Shortcut for source-lint-polymerlint
+	@echo lint;
+
 .PHONY: serve
 serve: source-serve  ## Shortcut for source-serve
 	@echo serve;

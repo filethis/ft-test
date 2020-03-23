@@ -6,12 +6,25 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <!-- Load any needed Web Components polyfills from the FileThis CDN -->
-    <script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/custom-elements-es5-adapter.js"></script>
-    <script src="https://unpkg.com/polymer-build@2.1.1/lib/babel-helpers.min.js"></script>
-    <script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/webcomponents-loader.js"></script>
+
+    <!--<script src="./bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>-->
+    <!--<script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/custom-elements-es5-adapter.js"></script>-->
+    <!--<script type="text/javascript">-->
+        <!--if (window.customElements) {-->
+            <!--document.write('<scr' + 'ipt type="text/javascript" src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/custom-elements-es5-adapter.js"></scr' + 'ipt>');-->
+        <!--}-->
+    <!--</script>-->
+
+    <!--<script src="https://unpkg.com/polymer-build@2.1.1/lib/babel-helpers.min.js"></script>-->
+
+    <!--<script src="https://connect.filethis.com/webcomponents/webcomponentsjs/1.0.0/webcomponents-loader.js"></script>-->
+    <script src="./bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
     <!-- Imports -->
-    <link rel="import" href="https://connect.filethis.com/ft-connect-wizard/2.0.8/ft-connect-wizard.html">
+    <!--<link rel="import" href="https://connect.filethis.com/ft-connect-wizard/2.0.8/ft-connect-wizard.html">-->
+    <!--<link rel="import" href="./bower_components/ft-connect-wizard/ft-connect-wizard.html">-->
+
+    <link rel="import" href="./src/ft-test.html">
 
     <style>
         html, body {
@@ -26,11 +39,7 @@
     <ft-test
         id="wizard"
         style="width: 800px; height: 500px; margin: 20px; border: 1px solid black; box-shadow: 5px 5px 4px #BBB; "
-        user-account-id="200695"
-        token="4XswPyG3OOGIXL_jkPeku5hi0JkoqCqhZXddkjNGjDF5"
-        live="true"
-        debug="true"
-        fake-sources="true">
+        >
     </ft-test>
 
     <script>
