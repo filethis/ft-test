@@ -49,7 +49,7 @@ project-init-github:  ## Initialize GitHub project
 .PHONY: source-serve-polymer
 source-serve-polymer:  ## Serve application or element demo locally using the Polymer server
 	@echo http:localhost:${LOCAL_PORT}; \
-	polymer serve --open --port ${LOCAL_PORT}
+	polymer serve --compile never --open --port ${LOCAL_PORT}
 
 .PHONY: source-serve
 source-serve: source-serve-polymer  ## Shortcut for source-serve-polymer
@@ -260,15 +260,6 @@ bower-reinstall-packages: bower-clean-packages bower-install-packages  ## Clean 
 
 .PHONY: bower-reinstall-packages-prod
 bower-reinstall-packages-prod: bower-clean-packages bower-install-packages-prod  ## Clean and reinstall all bower packages.
-
-
-#------------------------------------------------------------------------------
-# Modularizer (For migration from Polymer version 2 to version 3
-#------------------------------------------------------------------------------
-
-.PHONY: modularize
-modularize:  # Convert from from Polymer version 2 to version 3
-	@modulizer --import-style name --out .
 
 
 #------------------------------------------------------------------------------
